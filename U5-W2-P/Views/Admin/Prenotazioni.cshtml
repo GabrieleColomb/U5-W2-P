@@ -1,0 +1,95 @@
+﻿@using U5_W2_P.Models
+@model List<Prenotazione>
+
+@{
+    ViewBag.Title = "Prenotazioni";
+}
+
+<h2>Prenotazioni</h2>
+
+<p>
+    @Html.ActionLink("Inserisci nuova prenotazione", "CreaPrenotazione")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Prenotazione
+        </th>
+        <th>
+            ClienteId
+        </th>
+        <th>
+            NumeroCamera
+        </th>
+        <th>
+            DataPrenotazione
+        </th>
+        <th>
+            Anno
+        </th>
+        <th>
+            NumeroProgressivoAnno
+        </th>
+        <th>
+            DataArrivo
+        </th>
+        <th>
+            DataPartenza
+        </th>
+        <th>
+            CaparraConfirmatoria
+        </th>
+        <th>
+            Tariffa
+        </th>
+        <th>
+            TipoPasto
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (Prenotazione item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPrenotazione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroCamera)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataPrenotazione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Anno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroProgressivoAnno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataArrivo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataPartenza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaparraConfirmatoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tariffa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoPasto)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

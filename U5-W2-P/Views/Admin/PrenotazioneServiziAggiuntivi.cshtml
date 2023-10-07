@@ -1,0 +1,60 @@
+﻿@using U5_W2_P.Models
+@model List<PrenotazioneServizioAggiuntivo>
+
+
+@{
+    ViewBag.Title = "PrenotazioneServiziAggiuntivi";
+}
+
+<h2>PrenotazioneServiziAggiuntivi</h2>
+
+<p>
+    @Html.ActionLink("Aggiungi servizio per camera", "CreaServiziAggiuntivi")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            IdPrenotazioneServizioAggiuntivo
+        </th>
+        <th>
+            PrenotazioneId
+        </th>
+        <th>
+            ServizioAggiuntivoId
+        </th>
+        <th>
+            DataAcquisto
+        </th>
+        <th>
+            Quantità
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (PrenotazioneServizioAggiuntivo item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPrenotazioneServizioAggiuntivo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrenotazioneId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServizioAggiuntivoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAcquisto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantita)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>
